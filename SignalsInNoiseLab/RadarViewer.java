@@ -21,13 +21,13 @@ public class RadarViewer
         
         //User input stuff
         Scanner s = new Scanner(System.in);
-        System.out.println("Enter monster row: ");
+        System.out.print("Enter monster row: ");
         int user_row = s.nextInt();
-        System.out.println("Enter monster coloumn: ");
+        System.out.print("Enter monster coloumn: ");
         int user_coloumn = s.nextInt();
         
-        //radar.setMonsterLocation(user_row,user_coloumn);
         
+        //Maknig radar object and stuff
         Radar radar = new Radar(ROWS, COLS,user_row,user_coloumn);
         radar.setNoiseFraction(0.10);
         radar.scan();

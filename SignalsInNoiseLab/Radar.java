@@ -30,6 +30,8 @@ public class Radar
      * 
      * @param   rows    the number of rows in the radar grid
      * @param   cols    the number of columns in the radar grid
+     * @param   monsterRow  user inputted monster row
+     * @param   monsterCol  user inputted monster coloumn
      */
     public Radar(int rows, int cols,int monsterRow,int monsterCol)
     {
@@ -58,6 +60,7 @@ public class Radar
         //    3. inject noise into the grid
         //    4. update the accumulator 2D array based on the state of the currentScan 2D array
         //    5. increment the numScans instance variable
+        
         for (int i = 0;i<currentScan.length;i++)
         {
             for (int j = 0;j<currentScan[i].length;j++)
@@ -65,8 +68,7 @@ public class Radar
                 currentScan[i][j] = false;
             }
         }
-        
-        
+                
         injectNoise();
         
         setMonsterLocation(monsterLocationRow,monsterLocationCol);
@@ -81,10 +83,8 @@ public class Radar
                 }
             }
         }     
-        
-        
-        numScans += 1;
-               
+                
+        numScans += 1;      
     }
 
     /**
@@ -181,6 +181,7 @@ public class Radar
         // The noiseFraction instance variable is the probability that a given cell will be
         // detected as a false positive. Use the Math.random method to determine if each cell should be set
         // as a false positive.
+        
         for (int i = 0;i<currentScan.length;i++)
         {
             for (int j = 0;j<currentScan[i].length;j++)
